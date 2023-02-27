@@ -1,0 +1,63 @@
+
+@import "../../../../scss/variables";
+input::placeholder{
+    text-align: end;
+    color: #D1D5DB;
+    font-size: 14px;
+    padding-top: 1rem;
+
+  
+}
+.search{
+border-color: #E1E1E1 !important;
+border-radius: 0.5rem !important;
+text-align: end;
+width: 22rem;
+padding-top: 0.7rem;
+padding-bottom: 0.7rem;
+
+
+}
+.fa-magnifying-glass{
+    top: 1.5rem;
+    right: 20rem;
+    color: #05215B;
+}
+.search-box::after{
+position: absolute;
+content: "";
+height: 3.8rem;
+top: 0rem ;
+right: 32rem  ;
+border: #E1E1E1 solid 1px;
+}
+
+.fa-gear, .fa-bell{
+    border: #E1E1E1 1px solid;
+    border-radius: 0.5rem;
+    color: $primaryColor ;
+    font-size: 1.2rem;
+}
+
+
+.name{
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem !important;
+}
+.position{
+    font-size: 0.7rem;
+    color: #8D8D8D;
+}
+.profile-box{
+
+    margin-right: 5.5rem;
+}
+.header-container::after{
+    position: absolute;
+    content: "";
+    width: 94%;
+    border: #E1E1E1 solid 1px;
+    top: 7rem;
+    right: 1rem;
+    
+}

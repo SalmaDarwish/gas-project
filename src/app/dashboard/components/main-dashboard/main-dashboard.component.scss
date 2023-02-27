@@ -1,0 +1,58 @@
+
+@import "../../../../scss/variables";
+.main-header{
+    margin-top: 2.5rem;
+    margin-right: 2rem;
+}
+.welcome-icon{
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-top: 0.9rem;
+}
+.welcome-text{
+    font-size: 1.1rem;
+    margin-right: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.7rem;
+}
+
+.date-picker{
+    position: relative !important;
+    display: inline-flex !important;
+    width: 150px !important;
+    height: 35px !important;
+    margin-top: 0.5rem;
+}
+
+.fa-calendar-days{
+    font-size: 5px !important;
+}
+.menu-button{
+    margin-right: 8rem;
+    color: white;
+    background-color: $primaryColor;
+    border: 1px solid transparent;
+}
+
+.pipe-img{
+    width: 50%;
+}
+.pipe-number{
+    top: 58%;
+    left: 38%;
+}
+.text-orange{
+    color: $primaryColor;
+}
+.fa-sliders{
+    color: $primaryColor;
+    border: #E1E1E1 1px solid;
+    border-radius: 0.5rem;
+}
+.dropdown-menu{
+    position: absolute;
+    inset: 0px 0px auto auto;
+    margin: 0px;
+    transform: translate3d(-10px, 35px, 0px) !important;
+
+}
