@@ -52,3 +52,11 @@ html, body, #app {
 }
 
 
+.pointer{
+    cursor: pointer;
+}
+html, body {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden
+}

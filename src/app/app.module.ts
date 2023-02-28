@@ -16,7 +16,7 @@ import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CalendarModule} from 'primeng/calendar';
 import { PrimeNGConfig } from 'primeng/api';
-
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -33,6 +33,8 @@ import { PrimeNGConfig } from 'primeng/api';
     DashboardModule,
     BrowserAnimationsModule,
     CalendarModule,
+    NgApexchartsModule,
+
    
   ],
   providers: [CategoryService, BarSeriesService, ColumnSeriesService, LineSeriesService, LegendService, DataLabelService, MultiLevelLabelService, SelectionService],

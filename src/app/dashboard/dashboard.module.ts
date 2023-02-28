@@ -4,10 +4,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { MainDashboardComponent } from './components/main-dashboard/main-dashboard.component';
 import { RouterModule } from '@angular/router';
 import {CalendarModule} from 'primeng/calendar';
-import { TabViewModule } from 'primeng/tabview';
-import { FormsModule } from '@angular/forms';
-import { PrimeNGConfig } from 'primeng/api';
-import {DropdownModule} from 'primeng/dropdown';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { ApexChart, ApexDataLabels, ApexNonAxisChartSeries,ApexAxisChartSeries, ApexTitleSubtitle, ApexGrid, ApexMarkers } from 'ng-apexcharts';
+import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis,ApexFill,ApexTooltip} from "ng-apexcharts";
+
 
 @NgModule({
   declarations: [
@@ -18,11 +18,15 @@ import {DropdownModule} from 'primeng/dropdown';
     CommonModule,
     RouterModule,
     CalendarModule,
-    DropdownModule
+    NgApexchartsModule,
+  
   ],
   exports:[
     HeaderComponent,
     MainDashboardComponent,
   ]
 })
-export class DashboardModule { }
+export class DashboardModule {
+
+  
+ }

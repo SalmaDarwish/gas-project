@@ -49,10 +49,43 @@
     border: #E1E1E1 1px solid;
     border-radius: 0.5rem;
 }
-.dropdown-menu{
-    position: absolute;
-    inset: 0px 0px auto auto;
-    margin: 0px;
-    transform: translate3d(-10px, 35px, 0px) !important;
 
+
+.pipes-quantity , .accessories-quantity, .charts{
+    border-radius: 8px;
+    border: #E1E1E1 1px solid;
 }
+.fw-normal{
+    font-weight: 600 !important;
+}
+.acc-img{
+    width: 47%;
+}
+
+.pipes-select{
+    width: 200px;
+    height: auto;
+}
+
+.dashboard-content{
+    overflow-y: scroll;
+    height: 500px;
+}
+.dashboard-content::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .dashboard-content {
+    -ms-overflow-style: none !important;  /* IE and Edge */
+    scrollbar-width: none !important;  /* Firefox */
+  }
+  .modal-dialog{
+    max-width: 700px !important;
+  }
+  select{
+    width: 300px;
+  }
+  .apply-btn{
+    background-color: $primaryColor;
+  }

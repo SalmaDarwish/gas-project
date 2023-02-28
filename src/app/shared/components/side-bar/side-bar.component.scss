@@ -12,8 +12,8 @@
 
   }
   #sidebar .nav li a{
-padding-top: 1rem !important;
-padding-bottom: 1rem !important;
+padding-top: 0.7rem !important;
+padding-bottom: 0.7rem !important;
 color: #5D5D5D;
 // padding-left: 9.938rem !important;
 margin-left: 1rem;
@@ -27,7 +27,7 @@ margin-right: 1rem;
   #sidebar .nav li{
     background: none;
     font-family: 'Tajawal', sans-serif;
-    margin-bottom: 0.1rem !important;
+    margin-bottom: 0.6rem !important;
     
    
 
@@ -37,6 +37,12 @@ margin-right: 1rem;
     background: $primaryColor !important;
     color: white !important;
     border-radius: 0.5rem !important;
+  }
+  li a:hover {
+    background-color: #f3610081;
+    border-radius: 8px;
+    
+
   }
   
   // #sidebar .nav a i{
