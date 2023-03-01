@@ -7,6 +7,7 @@ import {CalendarModule} from 'primeng/calendar';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { ApexChart, ApexDataLabels, ApexNonAxisChartSeries,ApexAxisChartSeries, ApexTitleSubtitle, ApexGrid, ApexMarkers } from 'ng-apexcharts';
 import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis,ApexFill,ApexTooltip} from "ng-apexcharts";
+import { HighchartsChartModule } from "highcharts-angular";
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis
     RouterModule,
     CalendarModule,
     NgApexchartsModule,
+    HighchartsChartModule,
   
   ],
   exports:[

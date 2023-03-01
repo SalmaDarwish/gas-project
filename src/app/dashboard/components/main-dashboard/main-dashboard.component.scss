@@ -1,5 +1,12 @@
 
 @import "../../../../scss/variables";
+@import  url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+
+@font-face {
+    font-family: Tajwal;
+    src: url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+}
 .main-header{
     margin-top: 2.5rem;
     margin-right: 2rem;
@@ -88,4 +95,12 @@
   }
   .apply-btn{
     background-color: $primaryColor;
+  }
+
+  .Tajwal{
+    font-family: "Tajwal" ;
+    color: aqua;
+  }
+  .small{
+    font-size: 14px;
   }

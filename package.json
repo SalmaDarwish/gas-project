@@ -32,6 +32,8 @@
     "chart.js": "^3.1.1",
     "fflate": "^0.7.3",
     "hammerjs": "^2.0.8",
+    "highcharts": "^10.3.3",
+    "highcharts-angular": "^3.1.2",
     "igniteui-angular": "^15.0.13",
     "jquery": "^3.6.3",
     "mdb-angular-ui-kit": "^4.0.0",
