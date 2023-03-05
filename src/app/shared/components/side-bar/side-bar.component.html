@@ -11,26 +11,38 @@
               <p class="d-inline nav-item py-0 my-0 ">القائمة الرئيسية </p><i class="fa-solid fa-grip"></i> 
             </a>
           </li>
-          <li class="w-100  ">
-            <a href="#" class="d-flex justify-content-end">
-              <p class="d-inline nav-item py-0 my-0">المحطات  </p><i class="fa-solid fa-building"></i>
+          
+          <li class="w-100" (click)="toggleIcon()">
+            <a href="#" class="d-flex justify-content-between" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" >
+              <span class="me-3">            <i class="fa-solid fa-chevron-down" id="toggle-icon"></i>
+              </span>
+              <div class="list-item">
+                <p class="d-inline nav-item py-0 my-0">المحطات  </p><i class="fa-solid fa-building"></i>
+
+              </div>
+      
+              
             </a>
           </li>
-          <li class="w-100 ">
-            <a href="#" class="d-flex justify-content-end">
-              <p class="d-inline nav-item py-0 my-0">الأجهزة</p><i class="fa-solid fa-desktop"></i> 
-            </a>
-          </li>
-          <li class="w-100 ">
-            <a href="#" class="d-flex justify-content-end">
-              <p class="d-inline nav-item py-0 my-0">الإسطوانات  </p><i class="fa-solid fa-pump-soap"></i>
-            </a>
-          </li>
-          <li class="w-100 ">
-            <a href="#" class="d-flex justify-content-end">
-              <p class="d-inline nav-item py-0 my-0">الإكسسوارات  </p><i class="fa-solid fa-sitemap"></i>
-            </a>
-          </li>
+          <div id="collapseExample" class="ms-3 collapse">
+            <li class="w-100 ">
+              <a href="#" class="d-flex justify-content-end">
+                <p class="d-inline nav-item py-0 my-0">الأجهزة</p><i class="fa-solid fa-desktop"></i> 
+              </a>
+              
+            </li>
+            <li class="w-100 ">
+              <a href="#" class="d-flex justify-content-end">
+                <p class="d-inline nav-item py-0 my-0">الإسطوانات  </p><i class="fa-solid fa-pump-soap"></i>
+              </a>
+            </li>
+            <li class="w-100 ">
+              <a href="#" class="d-flex justify-content-end">
+                <p class="d-inline nav-item py-0 my-0">الإكسسوارات  </p><i class="fa-solid fa-sitemap"></i>
+              </a>
+            </li>
+          </div>
+         
           <li class="w-100 ">
             <a href="#" class="d-flex justify-content-end">
               <p class="d-inline nav-item py-0 my-0">الموظفون  </p><i class="fa-solid fa-user-tie"></i>

@@ -35,22 +35,32 @@ html, body, #app {
 //     overflow: auto;
 // }
 .p-calendar-w-btn .p-inputtext {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right-color: transparent;
-    border: 1px solid grey;
-    border-radius: 8px;
-    border-right-color: transparent;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0 ;
+    border-bottom-right-radius: 0 ;
+    border-right-color: transparent ;
+    border: 1px solid grey ;
+    border-radius: 8px ;
+    border-right-color: transparent ;
+    border-top-right-radius: 0px ;
+    border-bottom-right-radius: 0px ;
+    background-color: white !important ;
 }
 
 
 .p-datepicker-calendar {
-    background-color: white;
-    padding: 10px;
+    background-color: white !important;
+    padding: 30px !important;
+    border-radius: 8px !important;
 }
-
+.p-button-icon-only{
+    background-color: white !important;
+    padding: 10px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px grey solid ;
+    border-left-color: transparent;
+    border-right-color: grey;
+}
 
 .pointer{
     cursor: pointer;
