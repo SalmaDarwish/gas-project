@@ -6,7 +6,16 @@ import { Chart } from 'chart.js';
 import {ApexResponsive,} from "ng-apexcharts";
 import { ToolbarItems } from '@syncfusion/ej2-angular-charts';
 import  Highcharts  from "highcharts/highmaps";
-
+import * as am5 from '@amcharts/amcharts5';
+import * as am5xy from '@amcharts/amcharts5/xy';
+import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
+import * as am5map from "@amcharts/amcharts5/map";
+import am5geodata_worldLow from "@amcharts/amcharts5-geodata/worldLow";
+import am5geodata_data_countries from "@amcharts/amcharts5-geodata/data/countries";
+import am5geodata_data_countries2 from "@amcharts/amcharts5-geodata/data/countries2"
+import { CountriesData } from 'countries-map';
+import * as ChartGeo from "chartjs-chart-geo";
+import HC_map from 'highcharts/modules/map';
 
 @Component({
   selector: 'app-main-dashboard',
@@ -45,6 +54,7 @@ export class MainDashboardComponent implements OnInit {
    responsive: ApexResponsive[]=[];
    labels:any;
 
+  
 
  
   constructor(private chartsService:ChartsServiceService) {
@@ -215,6 +225,7 @@ export class MainDashboardComponent implements OnInit {
    
   };
     // accessories chart 
+
     // Devices Chart
     this.series3= [
      80,100
@@ -284,12 +295,17 @@ export class MainDashboardComponent implements OnInit {
   this.labels=["معطل", "يعمل"]
     // Devices Chart
 
+    // Map Chart
+
+
+// Map Chart
+
 
   }
   
 
-  ngOnInit():void {
-   
+  ngOnInit(){
+ 
   }
   
 
