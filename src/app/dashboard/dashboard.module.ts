@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from '../shared/components/header/header.component';
 import { MainDashboardComponent } from './components/main-dashboard/main-dashboard.component';
 import { RouterModule } from '@angular/router';
 import {CalendarModule} from 'primeng/calendar';

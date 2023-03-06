@@ -11,4 +11,8 @@ toggleIcon(){
   
   document.getElementById("toggle-icon")?.classList.toggle("fa-angle-up")
 }
+toggleIcon2(){
+  
+  document.getElementById("toggle-icon2")?.classList.toggle("fa-angle-up")
+}
 }

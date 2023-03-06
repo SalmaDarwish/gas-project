@@ -1,0 +1,67 @@
+@import "../../../../scss/variables";
+@import  url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+
+@font-face {
+    font-family: Tajwal;
+    src: url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+}
+body{
+    font-family: "Tajwal" !important;
+}
+.header{
+    margin-top: 2.5rem;
+    margin-right: 2rem;
+}
+input::placeholder{
+    text-align: end;
+    color: #D1D5DB;
+    font-size: 14px;
+    padding-top: 1rem;
+
+  
+}
+.search{
+border-color: #E1E1E1 !important;
+border-radius: 0.5rem !important;
+text-align: end;
+width: 20rem;
+padding-top: 0.3rem;
+padding-bottom: 0.3rem;
+margin-right: 7rem;
+
+
+}
+.fa-magnifying-glass{
+    top: 1.2rem;
+    right: 25.5rem;
+    color: $primaryColor;
+}
+.fa-filter{
+    border: #E1E1E1 1px solid;
+    border-radius: 0.5rem;
+    color: $primaryColor ;
+    font-size: 1.2rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+
+
+}
+.addStation-button{
+    margin-right: 5.3rem;
+    color: white;
+    background-color: $primaryColor;
+    border: 1px solid transparent;
+}
+
+.small{
+    font-size: 0.9rem;
+}
+// th{
+//     padding-left: 1.9rem;
+//     padding-right: 1.9rem;
+// }
+
+.ag-root-wrapper {
+    border: 0px transparent !important; 
+}

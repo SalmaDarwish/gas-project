@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CalendarModule} from 'primeng/calendar';
 import { PrimeNGConfig } from 'primeng/api';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { StationsModule } from './stations/stations.module';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     BrowserAnimationsModule,
     CalendarModule,
     NgApexchartsModule,
+    StationsModule
 
    
   ],

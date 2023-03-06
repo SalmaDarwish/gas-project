@@ -12,9 +12,9 @@
             </a>
           </li>
           
-          <li class="w-100" (click)="toggleIcon()">
-            <a href="#" class="d-flex justify-content-between" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" >
-              <span class="me-3">            <i class="fa-solid fa-chevron-down" id="toggle-icon"></i>
+          <li class="w-100" (click)="toggleIcon()" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <a href="#" class="d-flex justify-content-between" [routerLink]="'stations'"  [routerLinkActive]="'active'"  >
+              <span class="me-3">            <i class="fa-solid fa-chevron-down small" id="toggle-icon"></i>
               </span>
               <div class="list-item">
                 <p class="d-inline nav-item py-0 my-0">المحطات  </p><i class="fa-solid fa-building"></i>
@@ -38,34 +38,55 @@
             </li>
             <li class="w-100 ">
               <a href="#" class="d-flex justify-content-end">
-                <p class="d-inline nav-item py-0 my-0">الإكسسوارات  </p><i class="fa-solid fa-sitemap"></i>
+                <p class="d-inline nav-item py-0 my-0 me-3">الإكسسوارات  </p><i class="fa-solid fa-sitemap"></i>
+              </a>
+            </li>
+            <li class="w-100 ">
+              <a href="#" class="d-flex justify-content-end">
+                <p class="d-inline nav-item py-0 my-0"> العمال </p><i class="fa-solid fa-users"></i>
               </a>
             </li>
           </div>
          
-          <li class="w-100 ">
-            <a href="#" class="d-flex justify-content-end">
-              <p class="d-inline nav-item py-0 my-0">الموظفون  </p><i class="fa-solid fa-user-tie"></i>
+          <li class="w-100" (click)="toggleIcon2()">
+            <a href="#" class="d-flex justify-content-between" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2" >
+              <span class="me-3">            <i class="fa-solid fa-chevron-down small" id="toggle-icon2"></i>
+              </span>
+              <div class="list-item">
+                <p class="d-inline nav-item py-0 my-0">الموظفون  </p><i class="fa-solid fa-building"></i>
+
+              </div>
+      
+              
             </a>
           </li>
+        <div id="collapseExample2" class="ms-3 collapse">
           <li class="w-100 ">
             <a href="#" class="d-flex justify-content-end">
-              <p class="d-inline nav-item py-0 my-0"> العمال </p><i class="fa-solid fa-users"></i>
+              <p class="d-inline nav-item py-0 my-0 me-3">الصلاحيات</p><i class="fa-solid fa-desktop"></i> 
             </a>
+            
           </li>
+        </div>
           <li class="w-100 ">
             <a href="#" class="d-flex justify-content-end">
               <p class="d-inline nav-item py-0 my-0"> المعاملات </p><i class="fa-solid fa-right-left"></i>
             </a>
           </li>
+         
           <li class="w-100 ">
             <a href="#" class="d-flex justify-content-end">
-              <p class="d-inline nav-item py-0 my-0"> الصلاحيات </p><i class="fa-solid fa-user-lock"></i>
+              <p class="d-inline nav-item py-0 my-0"> التقارير </p><i class="fa-solid fa-receipt"></i> 
             </a>
           </li>
           <li class="w-100 ">
             <a href="#" class="d-flex justify-content-end">
-              <p class="d-inline nav-item py-0 my-0"> التقارير </p><i class="fa-solid fa-receipt"></i> 
+              <p class="d-inline nav-item py-0 my-0"> الشكاوى </p><i class="fa-solid fa-receipt"></i> 
+            </a>
+          </li>
+          <li class="w-100 ">
+            <a href="#" class="d-flex justify-content-end">
+              <p class="d-inline nav-item py-0 my-0"> الإعدادات </p><i class="fa-solid fa-receipt"></i> 
             </a>
           </li>
          

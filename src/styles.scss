@@ -68,5 +68,24 @@ html, body, #app {
 html, body {
     margin: 0; 
     height: 100%; 
-    overflow: hidden
+    // overflow: hidden
+    font-family: 'Tajawal', sans-serif;
+}
+.ag-root-wrapper {
+    border: none !important;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.ag-body-vertical-scroll-viewport {
+    overflow-y: scroll;
+    direction: rtl !important;
+    
+}
+.ag-header-viewport {
+    margin-right: 2.4rem;
+    background-color: white;
+}
+.ag-header{
+    background-color: white !important;
+
 }
