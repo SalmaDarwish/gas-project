@@ -18,46 +18,119 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./stations-main.component.scss']
 })
 export class StationsMainComponent {
-
-  public columnDefs: ColDef[] = [
-    {
-      field: 'رقم المحطة',
-   
-    },
-    { field: 'إسم المحطة' },
-    { field: 'المنطقة' },
-    {field: 'عدد الأجهزة'},
-    {field:'عدد العمال'},
-    {field:' حالة المحطة'},
-    {field:'  خيارات'},
-
-  ];
-  public defaultColDef: ColDef = {
-    flex: 1,
-    minWidth: 100,
-  };
-  public rowSelection: 'single' | 'multiple' = 'multiple';
-  public isRowSelectable: IsRowSelectable = (
-    params: IRowNode<Stations>
-  ) => {
-    return !!params.data && params.data.year === 2012;
-  };
-  public rowData!: Stations[];
-
-  constructor(private http: HttpClient) {}
-
-  onFirstDataRendered(params: FirstDataRenderedEvent<Stations>) {
-    params.api.forEachNode((node) =>
-      node.setSelected(!!node.data && node.data.year === 2012)
-    );
+stations:Stations[]=[
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
+  },
+  {
+    id:"#ndada",
+    name:"محطة الرياض",
+    city:'الرياض',
+    devices:3,
+    operators:40,
+    status:"معطلة"
   }
-
-  onGridReady(params: GridReadyEvent<Stations>) {
-    this.http
-      .get<Stations[]>(
-        'https://www.ag-grid.com/example-assets/small-olympic-winners.json'
-      )
-      .subscribe((data) => (this.rowData = data));
-  }
-
+]
+selectedStations:Stations[]=[]
 }

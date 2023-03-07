@@ -55,7 +55,7 @@ margin-right: 7rem;
 }
 
 .small{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 // th{
 //     padding-left: 1.9rem;
@@ -64,4 +64,87 @@ margin-right: 7rem;
 
 .ag-root-wrapper {
     border: 0px transparent !important; 
+}
+th{
+    color: #8D8D8D;
+    font-weight: 400;
+}
+// .table-header{
+// position: relative;
+// }
+// .table-header::after{
+//     position: absolute;
+//     content: "";
+//     width: 90%;
+//     background-color: #E1E1E1;
+//     top:180%;
+//     left: 8%;
+//     height: 0.5px;
+
+// }
+:host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.table{
+    height: 440px;
+    // overflow-y: scroll;  
+    -ms-overflow-style: none;
+    scrollbar-width: none ;
+    margin-bottom: 40px !important;
+}
+.table::-webkit-scrollbar{
+    display: none;
+}
+td{
+    height: 10px;
+    font-weight: 500;
+}
+tr{
+    position: relative;
+}
+.data-row::after{
+    position: absolute;
+    content: "";
+    width: 90%;
+    background-color: #E1E1E1;
+    top:22%;
+    left: 7%;
+    height: 0.5px;
+}
+.fa-ellipsis{
+    color: $primaryColor;
+    border: #E1E1E1 1px solid;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+}
+.dropdown-menu{
+    width: 80px !important;
+}
+.fa-circle-exclamation{
+    color: #8D8D8D;
+}
+.fa-desktop, .fa-pump-soap , .fa-sitemap , .fa-users, .fa-chart-simple  {
+    color: $primaryColor;
+}
+.fa-trash-can{
+    color: red;
+}
+.modal-dialog{
+    max-width: 700px !important;
+  }
+  select, input{
+    width: 300px;
+  }
+  .apply-btn{
+    background-color: $primaryColor;
+  }
+  .modal-lg{
+    max-width: 1000px !important;
+}
+.assign-button{
+    background-color: $primaryColor;
+    border: none;
+    border-radius: 0.5rem;
 }

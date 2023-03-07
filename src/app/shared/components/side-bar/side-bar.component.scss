@@ -57,3 +57,12 @@ i{
   padding-right: 1rem;
   padding-top: 0.188rem;
 }
+#sidebar{
+  height: 35rem !important;
+  overflow-y: scroll !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none ;
+}
+#sidebar::-webkit-scrollbar{
+  display: none;
+}

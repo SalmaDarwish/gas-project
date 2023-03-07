@@ -89,3 +89,7 @@ html, body {
     background-color: white !important;
 
 }
+.table>:not(caption)>*>* {
+    padding: 0rem !important;
+  
+}
