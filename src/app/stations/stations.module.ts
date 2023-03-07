@@ -8,6 +8,7 @@ import { StationsMainComponent } from './components/stations-main/stations-main.
 import {TableModule} from 'primeng/table';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AgGridModule } from 'ag-grid-angular';
+import { StationPipesSalesComponent } from './components/station-pipes-sales/station-pipes-sales.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AgGridModule } from 'ag-grid-angular';
     PipesComponent,
     AccessoriesComponent,
     OperatorsComponent,
-    StationsMainComponent
+    StationsMainComponent,
+    StationPipesSalesComponent
   ],
   imports: [
     CommonModule,

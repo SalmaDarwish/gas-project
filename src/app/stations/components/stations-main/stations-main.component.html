@@ -206,7 +206,7 @@
         </div>
 
           <div class="row mt-5 footer justify-content-center">
-            <button data-bs-toggle="modal" data-bs-target="#exampleModal2"  class=" btn w-50 apply-btn text-white">تطبيق</button>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal2"  class=" btn w-50 apply-btn text-white">التالي</button>
 
 
           </div>
@@ -229,6 +229,9 @@
             <button type="button" class="btn-close border-1 border rounded-2 p-1" data-bs-dismiss="modal" aria-label="Close"></button>
 
           </div>
+          <div class="row my-0 mx-2">
+            <p class="fw-bold fs-5 pointer" data-bs-toggle="modal" data-bs-target="#exampleModal" >عودة<i class="fa-solid fa-chevron-right me-3 mt-4"></i></p>
+          </div>
           <div class="row mb-3 mx-2  mt-3 d-flex justify-content-between ">
            
             <div class="col">
@@ -236,11 +239,11 @@
 
             </div>
             <div class="col text-start">
-                <span class=" d-inline fw-bold fs-5 mx-0 px-0 "> إضافة محطة</span>
+                <span class=" d-inline fw-bold fs-5 mx-0 px-0 "> إضافة أجهزة</span>
 
         </div>
           </div>
-          <p-table [value]="stations" [paginator]="true"  [rows]="5" [showCurrentPageReport]="true"    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"   [(selection)]="selectedStations" dataKey="code" [tableStyle]="{'min-width': '50rem','height':'450px'}">
+          <p-table [value]="stations" [paginator]="true"  [rows]="3" [showCurrentPageReport]="true"    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"   [(selection)]="selectedStations" dataKey="code" [tableStyle]="{'min-width': '50rem','height':'350px'}">
             <ng-template pTemplate="header" >
                 <tr class="text-center table-header">
                     <th style="width: 4rem">
@@ -261,25 +264,7 @@
                         <p-tableCheckbox [value]="station"></p-tableCheckbox>
                     </td>
                     <td class="pt-3"><button class="mt-4 assign-button p-2 text-white small">تعيين</button></td>
-                    <div class="dropdown mt-3 pt-1 me-5">
-                        <td class="pt-4 pointer "  data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis p-2"></i></td>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item  pointer px-2 small" >التفاصيل<i class="fa-solid fa-circle-exclamation pe-2"></i> </a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item pointer px-2 small" >عرض الأجهزة <i class="fa-solid fa-desktop pe-2"></i></a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item pointer px-2 small" >عرض الأسطوانات <i class="fa-solid fa-pump-soap pe-2"></i></a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item pointer px-2 small" >عرض الإكسسوارات <i class="fa-solid fa-sitemap pe-2"></i></a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item pointer px-2 small" >عرض العمال <i class="fa-solid fa-users pe-2"></i></a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item pointer px-2 small" >عرض المبيعات <i class="fa-solid fa-chart-simple pe-2"></i></a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item pointer px-2 small" >حذف<i class="fa-solid fa-trash-can pe-2"></i></a></li>
-                          </ul>
-                    </div>
-                    
+
                     <td class="text-center   pt-4">{{station.status}}</td>
                     <td class="text-center pt-4">{{station.operators}}</td>
                     <td class="pt-4">{{station.devices}}</td>
@@ -292,7 +277,7 @@
         </p-table>
 
           <div class="row mt-5 footer justify-content-center">
-            <button data-bs-toggle="modal" data-bs-target="#exampleModal2"  class=" btn w-50 apply-btn text-white">تطبيق</button>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal3"  class=" btn w-25 apply-btn text-white">التالي</button>
 
 
           </div>
@@ -302,4 +287,109 @@
       </div>
     </div>
   </div>
+    <!-- Adding Station Modal - second step -->
+
+
+    <!-- Adding Station Modal - third step -->
+    <div class="modal fade adding-station-modal" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          
+          <div class="modal-body">
+            <div class="row close justify-content-end mx-2 my-1">
+              <button type="button" class="btn-close border-1 border rounded-2 p-1" data-bs-dismiss="modal" aria-label="Close"></button>
+  
+            </div>
+            <div class="row my-0 mx-2">
+              <p class="fw-bold fs-5 pointer" data-bs-toggle="modal" data-bs-target="#exampleModal2" >عودة<i class="fa-solid fa-chevron-right me-3 mt-4"></i></p>
+            </div>
+            <div class="row mb-3 mx-2  mt-3 d-flex justify-content-between ">
+             
+              <div class="col">
+                  <span class=" d-inline fw-bold fs-5 mx-0 px-0">الخطوة 3/3</span>
+  
+              </div>
+              <div class="col text-start">
+                  <span class=" d-inline fw-bold fs-5 mx-0 px-0 "> إضافة عمال</span>
+  
+          </div>
+            </div>
+            <p-table [value]="stations" [paginator]="true"  [rows]="3" [showCurrentPageReport]="true"    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"   [(selection)]="selectedStations" dataKey="code" [tableStyle]="{'min-width': '50rem','height':'350px'}">
+              <ng-template pTemplate="header" >
+                  <tr class="text-center table-header">
+                      <th style="width: 4rem">
+                          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                      </th>
+                      <th></th>
+                      <th> حالة العامل</th>
+                      <th> إجمال الطلبات المكتملة </th>
+                      <th>  المنطقة </th>
+                      <th>رقم الجوال </th>
+                      <th>البريد الإلكتروني</th>
+                      <th>إسم العامل</th>
+                      <th>رقم العامل </th>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-station>
+                  <tr class="text-center data-row">
+                      <td>
+                          <p-tableCheckbox [value]="station"></p-tableCheckbox>
+                      </td>
+                      <td class="pt-3"><button class="mt-4 assign-button p-2 text-white small">تعيين</button></td>
+  
+                      <td class="text-center   pt-4">{{station.status}}</td>
+                      <td class="text-center pt-4">{{station.operators}}</td>
+                      <td class="pt-4">{{station.devices}}</td>
+                      <td class="pt-4">{{station.city}}</td>
+                      <td class="pt-4">{{station.name}}</td>
+                      <td class="pt-4">{{station.id}}</td>
+                      <td class="pt-4">{{station.id}}</td>
+
+                  </tr>
+                  
+              </ng-template>
+          </p-table>
+  
+            <div class="row mt-5 footer justify-content-center">
+              <button data-bs-toggle="modal" data-bs-target="#exampleModal4"   class=" btn w-25 apply-btn text-white">إضافة محطة</button>
+  
+  
+            </div>
+           
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Adding Station Modal - third step -->
+    <!-- Adding Station Modal - Successful adding -->
+    <div class="modal fade adding-station-modal" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+          
+          <div class="modal-body mb-5">
+            <div class="row close justify-content-end mx-2 my-1">
+              <button type="button" class="btn-close border-1 border rounded-2 p-1" data-bs-dismiss="modal" aria-label="Close"></button>
+  
+            </div>
+
+            <div class="row mb-5 mt-2 text-center">
+              <p class="fs-4 fw-bolder">تم إضافة المحطة بنجاح</p>
+              <i class="fa-regular fa-circle-check  mt-3"></i>
+            </div>
+         
+        
+      
+  
+        
+           
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Adding Station Modal - Successful adding -->
+
+
+
 </div>
