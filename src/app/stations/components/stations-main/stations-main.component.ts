@@ -133,4 +133,8 @@ stations:Stations[]=[
   }
 ]
 selectedStations:Stations[]=[]
+
+editableForm(){
+  document.getElementById("readyonly")?.removeAttribute("")
+}
 }

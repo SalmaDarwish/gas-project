@@ -9,7 +9,10 @@ import {TableModule} from 'primeng/table';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AgGridModule } from 'ag-grid-angular';
 import { StationPipesSalesComponent } from './components/station-pipes-sales/station-pipes-sales.component';
-
+import { RouterModule } from '@angular/router';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { ApexChart, ApexDataLabels, ApexNonAxisChartSeries,ApexAxisChartSeries, ApexTitleSubtitle, ApexGrid, ApexMarkers } from 'ng-apexcharts';
+import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis,ApexFill,ApexTooltip} from "ng-apexcharts";
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { StationPipesSalesComponent } from './components/station-pipes-sales/sta
     TableModule,
     NgxDatatableModule,
     AgGridModule,
+    RouterModule,
+    NgApexchartsModule
   ],
   exports:[
     AccessoriesComponent,
