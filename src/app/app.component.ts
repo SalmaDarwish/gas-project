@@ -18,16 +18,22 @@ export class AppComponent implements OnInit, DoCheck {
     ngOnInit(): void {
     
     }
+    // Handling changes in sidebar according to actived Router
     ngDoCheck() {
       this.href=window.location.href
-      console.log(this.href)
       if(this.href.includes("stations-pipes-sales")|| this.href.includes("stations")){
-        console.log("gamed")
         document.getElementById("stations")?.classList.add("active") 
       
       
       }   else{
         document.getElementById("stations")?.classList.remove("active")
+      }
+
+      if(this.href.includes("stations-devices")){
+        document.getElementById("fa-desktop")?.classList.add("active-icon")
+      } else{
+        document.getElementById("fa-desktop")?.classList.remove("active-icon")
+
       }
     
     }

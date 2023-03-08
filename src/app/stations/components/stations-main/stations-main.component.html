@@ -15,7 +15,7 @@
 </div>
 <div class=" mt-4 ms-4 table">
     <p-table [value]="stations" [paginator]="true"  [rows]="5" [showCurrentPageReport]="true"    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"   [(selection)]="selectedStations" dataKey="code" [tableStyle]="{'min-width': '50rem','height':'450px'}">
-        <ng-template pTemplate="header" >
+        <ng-template pTemplate="header" let-ri="rowIndex" let-emp="rowData">
             <tr class="text-center table-header">
                 <th style="width: 4rem">
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
@@ -29,7 +29,7 @@
                 <th>رقم المحطة </th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-station>
+        <ng-template pTemplate="body" let-station let-ri="rowIndex">
             <tr class="text-center data-row">
                 <td>
                     <p-tableCheckbox [value]="station"></p-tableCheckbox>
@@ -39,7 +39,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item  pointer px-2 small" data-bs-toggle="modal" data-bs-target="#exampleModal5" >التفاصيل<i class="fa-solid fa-circle-exclamation pe-2"></i> </a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item pointer px-2 small" >عرض الأجهزة <i class="fa-solid fa-desktop pe-2"></i></a></li>
+                        <li><a class="dropdown-item pointer px-2 small" [routerLink]="['/stations-devices']">عرض الأجهزة <i class="fa-solid fa-desktop pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item pointer px-2 small" >عرض الأسطوانات <i class="fa-solid fa-pump-soap pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -49,11 +49,11 @@
                         <li><hr class="dropdown-divider"></li>
                         <li><a   [routerLink]="['/stations-pipes-sales']" class="dropdown-item pointer px-2 small">عرض المبيعات <i class="fa-solid fa-chart-simple pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item pointer px-2 small" >حذف<i class="fa-solid fa-trash-can pe-2"></i></a></li>
+                        <li><a class="dropdown-item pointer px-2 small" data-bs-toggle="modal" data-bs-target="#exampleModal6" (click)="delete(ri)" >حذف<i class="fa-solid fa-trash-can pe-2"></i></a></li>
                       </ul>
                 </div>
                 
-                <td class="text-center   pt-5">{{station.status}}</td>
+                <td class="text-center pt-5">{{station.status}}</td>
                 <td class="text-center pt-4">{{station.operators}}</td>
                 <td class="pt-4">{{station.devices}}</td>
                 <td class="pt-4">{{station.city}}</td>
@@ -368,7 +368,7 @@
         <div class="modal-content">
           
           <div class="modal-body">
-            <div class="row close justify-content-end mx-2 my-1">
+            <div class="row close justify-content-end mx-2 my-1" (click)="noneditableForm()">
               <button type="button" class="btn-close border-1 border rounded-2 p-1" data-bs-dismiss="modal" aria-label="Close"></button>
   
             </div>
@@ -376,8 +376,8 @@
             <div class="row mb-3 mx-2  mt-3 d-flex justify-content-between ">
              
             
-              <div class="col text-end">
-                  <span class=" d-inline pointer fs-5 mx-0 px-0 "> تعديل  <i class="fa-regular fa-pen-to-square"></i></span>
+              <div class="col text-end" >
+                  <span class=" d-inline pointer fs-5 mx-0 px-0 " (click)="editableForm()"> تعديل  <i class="fa-regular fa-pen-to-square"></i></span>
   
           </div>
           <div class="col text-start">
@@ -400,14 +400,15 @@
   
             </div>
             <div class="row mt-2 inputs">
+           
               <div class="col-6">
-                      <input class="form-control me-4 text-start" readonly id="readonly"  [value]="stations[1].name">
+                      <input class="form-control me-4 text-start readonly" readonly  [value]="stations[1].name">
   
               </div>
               <div class="col-6">
-                      <input class="form-control me-3 text-start" id="readonly" readonly [value]="stations[1].id">
-  
-              </div>
+                <input class="form-control me-3 text-start readonly" readonly   [value]="stations[1].id">
+
+        </div>
           </div>
           <div class="row input-labels mt-3  justify-content-between ">
          
@@ -464,16 +465,16 @@
                     </select>
               </div>
               <div class="col-4">
-                      <input class="form-control me-5 w-75" readonly id="readonly"  type="number" [value]="stations[0].operators">
+                      <input class="form-control me-5 w-75 readonly" readonly   type="number" [value]="stations[0].operators">
   
               </div>
               <div class="col-4">
-                  <input class="form-control me-5 w-75" readonly id="readonly" [value]="stations[0].devices" type="number">
+                  <input class="form-control me-5 w-75 readonly" readonly  [value]="stations[0].devices" type="number">
   
           </div>
           </div>
-            <div class="row mt-5 footer justify-content-center">
-              <button type="button" data-bs-dismiss="modal"  class=" btn w-25 apply-btn text-white"> حفظ التعديلات  </button>
+            <div class="row mt-5 footer justify-content-center" (click)="noneditableForm()">
+              <button type="button" data-bs-dismiss="modal" id="edit-btn" class=" btn w-25  text-white"> حفظ التعديلات  </button>
   
   
             </div>
@@ -485,6 +486,47 @@
       </div>
     </div>
     <!-- Details Modal  -->
+
+    <!-- Delete  Modal  -->
+
+    <div class="modal fade adding-success-modal" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+          
+          <div class="modal-body mb-5">
+            <div class="row close justify-content-end mx-2 my-1">
+              <button type="button" class="btn-close border-1 border rounded-2 p-1" data-bs-dismiss="modal" aria-label="Close"></button>
+  
+            </div>
+
+            <div class="row mb-5 mt-2 justify-content-center text-center">
+           <img src="../../../../assets/stations/undraw_throw_away_re_x60k.png" class="w-50">
+           <p class="mt-3 fs-4" >هل تريد حذف المحطة ؟ </p>
+           <p>سيتم حذف المحطة و سوف تحتاج إلى إعادة إدخال بياناتها مرة أخرى</p>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col text-start">
+                <button type="button" data-bs-dismiss="modal" id="cancel-btn" class=" btn w-50  text-white">  إلغاء   </button>
+
+              </div>
+              <div class="col text-end">
+                <button type="button" data-bs-dismiss="modal" class=" btn w-50 apply-btn  text-white" (click)="yesDelete()"> تأكيد وحذف   </button>
+
+              </div>
+           
+            </div>
+         
+        
+      
+  
+        
+           
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Delete Modal  -->
 
 
 

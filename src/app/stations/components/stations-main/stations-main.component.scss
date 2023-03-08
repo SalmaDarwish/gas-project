@@ -138,7 +138,10 @@ tr{
     width: 300px;
   }
   .apply-btn{
-    background-color: $primaryColor;
+    background-color: $primaryColor !important;
+  }
+  #edit-btn , #cancel-btn{
+    background-color: #8D8D8D;
   }
   .modal-lg{
     max-width: 1000px !important;
