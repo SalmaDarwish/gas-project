@@ -12,12 +12,12 @@
             </a>
           </li>
           
-          <li class="w-100" (click)="toggleIcon()" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            <a href="#" class="d-flex justify-content-between" id="stations" [routerLink]="'stations'"  [routerLinkActive]="'active'"  >
-              <span class="me-3">            <i class="fa-solid fa-chevron-down small" id="toggle-icon"></i>
+          <li class="w-100" >
+            <a  class="d-flex justify-content-between pointer" id="stations" (click)="toggleIcon()" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" [routerLinkActive]="'active'"  >
+              <span class="me-3 ps-3 ">            <i  class="fa-solid fa-chevron-down small"   id="toggle-icon"></i>
               </span>
-              <div class="list-item">
-                <p class="d-inline nav-item py-0 my-0">المحطات  </p><i class="fa-solid fa-building"></i>
+              <div class="list-item "  [routerLink]="'stations'">
+                <p class="d-inline nav-item py-0 my-0">المحطات  </p><i  class="fa-solid fa-building"></i>
 
               </div>
       
@@ -48,9 +48,9 @@
             </li>
           </div>
          
-          <li class="w-100" (click)="toggleIcon2()">
-            <a href="#" class="d-flex justify-content-between" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2" >
-              <span class="me-3">            <i class="fa-solid fa-chevron-down small" id="toggle-icon2"></i>
+          <li class="w-100" >
+            <a  class="d-flex justify-content-between pointer" (click)="toggleIcon2()" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2" >
+              <span class="me-3 ps-3 "  >    <i class="fa-solid fa-chevron-down small" id="toggle-icon2"></i>
               </span>
               <div class="list-item">
                 <p class="d-inline nav-item py-0 my-0">الموظفون  </p><i class="fa-solid fa-user-tie"></i>
