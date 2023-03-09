@@ -1,1 +1,371 @@
-<p>devices works!</p>
+<div class="container  mt-0 pt-0 px-0">
+    <div class="header d-flex justify-content-end">
+        <button class="addStation-button py-2 px-3 mt-3 pointer"  data-bs-toggle="modal" data-bs-target="#exampleModal"> إضافة جهاز <i class="fa-solid fa-plus me-3"></i> </button>
+    
+        <div class="filter-icon mt-3 ms-4">
+                <i class="fa-solid fa-filter pointer  px-2"></i> 
+    
+        </div>
+        <div class="search-box  w-auto d-flex justify-content-end mt-2 pt-2 position-relative">
+            <input type="text" class="search form-control" placeholder="...البحث">
+            <i class="fa-solid fa-magnifying-glass position-absolute"></i>  
+        </div>  
+        <h1 class="fs-4 fw-bold mt-3 pt-1 me-3">الأجهزة</h1>
+    
+    </div>
+    <div class=" mt-4 ms-4 table">
+        <p-table [value]="stations" [paginator]="true"  [rows]="5" [showCurrentPageReport]="true"    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"   [(selection)]="selectedStations" dataKey="code" [tableStyle]="{'min-width': '50rem','height':'450px'}">
+            <ng-template pTemplate="header" let-ri="rowIndex" let-emp="rowData">
+                <tr class="text-center table-header">
+                    <th style="width: 4rem">
+                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                    </th>
+                    <th> خيارات</th>
+                    <th> حالة الجهاز</th>
+                    <th> مبيعات الجهاز </th>
+                    <th>نوع الجهاز</th>
+                    <th>المنطقة</th>
+                    <th>إسم الجهاز</th>
+                    <th>رقم الجهاز </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-station let-ri="rowIndex">
+                <tr class="text-center data-row">
+                    <td>
+                        <p-tableCheckbox [value]="station"></p-tableCheckbox>
+                    </td>
+                    <div class="dropdown mt-3 pt-1 me-5">
+                        <td class="pt-4 pointer "  data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis p-2"></i></td>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item  pointer px-2 small" data-bs-toggle="modal" data-bs-target="#exampleModal5" >التفاصيل<i class="fa-solid fa-circle-exclamation pe-2"></i> </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a   [routerLink]="['/station-devices-sales']" class="dropdown-item pointer px-2 small">عرض المبيعات <i class="fa-solid fa-chart-simple pe-2"></i></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item pointer px-2 small" data-bs-toggle="modal" data-bs-target="#exampleModal6" (click)="delete(ri)" >حذف<i class="fa-solid fa-trash-can pe-2"></i></a></li>
+                          </ul>
+                    </div>
+                    
+                    <td class="text-center pt-4">{{station.status}}</td>
+                    <td class="text-center pt-4">{{station.operators}}</td>
+                    <td class="pt-4">{{station.devices}}</td>
+                    <td class="pt-4">{{station.city}}</td>
+                    <td class="pt-4">{{station.name}}</td>
+                    <td class="pt-4">{{station.id}}</td>
+                </tr>
+                
+            </ng-template>
+        </p-table>
+       
+    </div>
+    
+    <!-- Adding device Modal  -->
+    <div class="modal fade adding-device-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+          <div class="modal-content">
+            
+            <div class="modal-body">
+              <div class="row close justify-content-end mx-2 my-1">
+                <button type="button" class="btn-close border-1 border rounded-2 p-1" data-bs-dismiss="modal" aria-label="Close"></button>
+    
+              </div>
+              <div class="row mt-3 d-flex ms-1 ">
+               
+                    <span class=" text-start d-inline fw-bold fs-5  px-0 "> إضافة جهاز</span>
+    
+              </div>
+              <div class="row input-labels mt-3 justify-content-between ">
+                <div class="col-6">
+                              <p class="text-start">إسم الجهاز</p>
+    
+                </div>
+                <div class="col-6">
+                              <p class="text-start ms-2">رقم الجهاز</p>
+    
+                </div>
+               
+              
+    
+              </div>
+              <div class="row mt-2 inputs">
+                <div class="col-6">
+                        <input class="form-control me-4 ">
+    
+                </div>
+                <div class="col-6">
+                        <input class="form-control me-3">
+    
+                </div>
+            </div>
+            <div class="row input-labels mt-3  justify-content-between ">
+           
+                <div class="col-6">
+                              <p class="text-start ">الحي </p>
+    
+                </div>
+                <div class="col-6">
+                    <p class="text-start ms-2">المنطقة </p>
+    
+      </div>
+              
+    
+              </div>
+              <div class="row selections mt-2 justify-content-between mx-2 ">
+                <select id="district" class="form-select form-select-sm  me-3 py-2" aria-label="Default select example" >
+                  <option selected class="text-start ">اختر الحي</option>
+                  <option value="1" class="text-start">الرياض</option>
+                  <option value="2" class="text-start">مكة</option>
+                  <option value="3" class="text-start">المدينة</option>
+                </select>
+    
+     <select class="form-select form-select-sm  py-2" aria-label="Default select example" >
+                <option selected class="text-start ">اختر المنطقة</option>
+                <option value="1" class="text-start">الرياض</option>
+                <option value="2" class="text-start">مكة</option>
+                <option value="3" class="text-start">المدينة</option>
+              </select>
+              </div>
+              <div class="row input-labels mt-3 justify-content-between ">
+                <div class="col-6">
+                              <p class="text-start">حالة الجهاز</p>
+    
+                </div>
+                <div class="col-6">
+                              <p class="text-start ms-2">نوع الجهاز</p>
+    
+                </div>
+   
+               
+              
+    
+              </div>
+              <div class="row mt-2 inputs">
+                <div class="col-6">
+                    <select  class="form-select form-select-sm  py-2 me-4" style="width:300px" aria-label="Default select example" >
+                        <option selected value="1" class="text-start">يعمل</option>
+                        <option value="2" class="text-start">معطل
+                        </option>
+                      </select>
+                </div>
+                <div class="col-6">
+                    <select  class="form-select form-select-sm  py-2 me-3" style="width:300px" aria-label="Default select example" >
+                        <option selected value="1" class="text-start">جهاز اسطوانات </option>
+                        <option value="2" class="text-start">جهاز 
+                        </option>
+                      </select>
+                </div>
+            </div>
+    
+              <div class="row mt-5 footer justify-content-center">
+                <button data-bs-toggle="modal" data-bs-target="#exampleModal4"  class=" btn w-50 apply-btn text-white">إضافة جهاز</button>
+    
+    
+              </div>
+             
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- Adding Station Modal  -->
+    
+    
+    
+
+    
+        <!-- Adding Station Modal - Successful adding -->
+        <div class="modal fade adding-success-modal" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+              
+              <div class="modal-body mb-5">
+                <div class="row close justify-content-end mx-2 my-1">
+                  <button type="button" class="btn-close border-1 border rounded-2 p-1" data-bs-dismiss="modal" aria-label="Close"></button>
+      
+                </div>
+    
+                <div class="row mb-5 mt-2 text-center">
+                  <p class="fs-4 fw-bolder">تم إضافة الجهاز بنجاح</p>
+                  <i class="fa-regular fa-circle-check  mt-5"></i>
+                </div>
+             
+            
+          
+      
+            
+               
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <!-- Adding Station Modal - Successful adding -->
+    
+    
+        <!-- Details Modal  -->
+    
+        <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+              
+              <div class="modal-body">
+                <div class="row close justify-content-end mx-2 my-1" (click)="noneditableForm()">
+                  <button type="button" class="btn-close border-1 border rounded-2 p-1" data-bs-dismiss="modal" aria-label="Close"></button>
+      
+                </div>
+              
+                <div class="row mb-3 mx-2  mt-3 d-flex justify-content-between ">
+                 
+                
+                  <div class="col text-end" >
+                      <span class=" d-inline pointer fs-5 mx-0 px-0 " (click)="editableForm()"> تعديل  <i class="fa-regular fa-pen-to-square"></i></span>
+      
+              </div>
+              <div class="col text-start">
+                <span class=" d-inline fw-bold fs-5 me-2 px-0 ">  التفاصيل</span>
+    
+        </div>
+                </div>
+             
+                <div class="row input-labels mt-3 justify-content-between ">
+                  <div class="col-6">
+                                <p class="text-start">إسم الجهاز</p>
+      
+                  </div>
+                  <div class="col-6">
+                                <p class="text-start ms-2">رقم الجهاز</p>
+      
+                  </div>
+                 
+                
+      
+                </div>
+                <div class="row mt-2 inputs">
+               
+                  <div class="col-6">
+                          <input class="form-control me-4 text-start readonly" readonly  [value]="stations[1].name">
+      
+                  </div>
+                  <div class="col-6">
+                    <input class="form-control me-3 text-start readonly" readonly   [value]="stations[1].id">
+    
+            </div>
+              </div>
+              <div class="row input-labels mt-3  justify-content-between ">
+             
+                  <div class="col-6">
+                                <p class="text-start ">الحي </p>
+      
+                  </div>
+                  <div class="col-6">
+                      <p class="text-start ms-2">المنطقة </p>
+      
+        </div>
+                
+      
+                </div>
+                <div class="row selections mt-2 justify-content-between mx-2 ">
+                  <select disabled="true" id="district" class="form-select form-select-sm  me-3 py-2" aria-label="Default select example" >
+                    <option selected class="text-start ">{{stations[0].city}} </option>
+                    <option value="الرياض" class="text-start">الرياض</option>
+                    <option value="مكة" class="text-start">مكة</option>
+                    <option value="المدينة" class="text-start">المدينة</option>
+                  </select>
+      
+       <select disabled="true" class="form-select form-select-sm  py-2" aria-label="Default select example" >
+                  <option selected [value]="stations[0].city" class="text-start "> {{stations[0].city}}</option>
+                  <option value="1" class="text-start">الرياض</option>
+                  <option value="2" class="text-start">مكة</option>
+                  <option value="3" class="text-start">المدينة</option>
+                </select>
+                </div>
+                <div class="row input-labels mt-3 justify-content-between ">
+                  <div class="col-6">
+                                <p class="text-start">حالة الجهاز</p>
+      
+                  </div>
+                  <div class="col-6">
+                                <p class="text-start ms-2">نوع الجهاز </p>
+      
+                  </div>
+        
+                 
+                
+      
+                </div>
+                <div class="row mt-2 inputs">
+                  <div class="col-6">
+                      <select disabled="true" class="form-select form-select-sm  py-2 me-4" style="width:300px" aria-label="Default select example" >
+                        <option selected  [value]="stations[0].status" class="text-start">{{stations[0].status}}</option>
+                          <option  value="1"  class="text-start">تعمل</option>
+                          <option value="2" class="text-start">معطلة
+                          </option>
+                        </select>
+                  </div>
+                  <div class="col-6">
+                    <select disabled="true" class="form-select form-select-sm  py-2 me-3" style="width:300px" aria-label="Default select example" >
+                      <option selected  [value]="stations[0].status" class="text-start">{{stations[0].status}}</option>
+                        <option  value="1"  class="text-start">تعمل</option>
+                        <option value="2" class="text-start">معطلة
+                        </option>
+                      </select>
+                </div>
+              
+              </div>
+                <div class="row mt-5 footer justify-content-center" (click)="noneditableForm()">
+                  <button type="button" data-bs-dismiss="modal" id="edit-btn" class=" btn w-25  text-white"> حفظ التعديلات  </button>
+      
+      
+                </div>
+                
+               
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <!-- Details Modal  -->
+    
+        <!-- Delete  Modal  -->
+    
+        <div class="modal fade adding-success-modal" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+              
+              <div class="modal-body mb-5">
+                <div class="row close justify-content-end mx-2 my-1">
+                  <button type="button" class="btn-close border-1 border rounded-2 p-1" data-bs-dismiss="modal" aria-label="Close"></button>
+      
+                </div>
+    
+                <div class="row mb-5 mt-2 justify-content-center text-center">
+               <img src="../../../../assets/stations/undraw_throw_away_re_x60k.png" class="w-50">
+               <p class="mt-3 fs-4" >هل تريد حذف الجهاز ؟ </p>
+               <p>سيتم حذف الجهاز و سوف تحتاج إلى إعادة إدخال بياناته مرة أخرى</p>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col text-start">
+                    <button type="button" data-bs-dismiss="modal" id="cancel-btn" class=" btn w-50  text-white">  إلغاء   </button>
+    
+                  </div>
+                  <div class="col text-end">
+                    <button type="button" data-bs-dismiss="modal" class=" btn w-50 apply-btn  text-white" (click)="yesDelete()"> تأكيد وحذف   </button>
+    
+                  </div>
+               
+                </div>
+             
+            
+          
+      
+            
+               
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <!-- Delete Modal  -->
+    
+    
+    
+    </div>

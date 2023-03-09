@@ -13,6 +13,10 @@ import { RouterModule } from '@angular/router';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { ApexChart, ApexDataLabels, ApexNonAxisChartSeries,ApexAxisChartSeries, ApexTitleSubtitle, ApexGrid, ApexMarkers } from 'ng-apexcharts';
 import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis,ApexFill,ApexTooltip} from "ng-apexcharts";
+import { StationDevicesSalesComponent } from './components/station-devices-sales/station-devices-sales.component';
+import  {MatCurrencyFormatModule} from 'mat-currency-format';
+import { NgxCurrencyModule } from "ngx-currency";
+
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis
     AccessoriesComponent,
     OperatorsComponent,
     StationsMainComponent,
-    StationPipesSalesComponent
+    StationPipesSalesComponent,
+    StationDevicesSalesComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +34,9 @@ import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis
     NgxDatatableModule,
     AgGridModule,
     RouterModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    MatCurrencyFormatModule,
+    NgxCurrencyModule
   ],
   exports:[
     AccessoriesComponent,

@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, DoCheck {
     // Handling changes in sidebar according to actived Router
     ngDoCheck() {
       this.href=window.location.href
-      if(this.href.includes("stations-pipes-sales")|| this.href.includes("stations")){
+      if(this.href.includes("station")){
         document.getElementById("stations")?.classList.add("active") 
       
       
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit, DoCheck {
         document.getElementById("stations")?.classList.remove("active")
       }
 
-      if(this.href.includes("stations-devices")){
+      if(this.href.includes("devices")){
         document.getElementById("fa-desktop")?.classList.add("active-icon")
       } else{
         document.getElementById("fa-desktop")?.classList.remove("active-icon")

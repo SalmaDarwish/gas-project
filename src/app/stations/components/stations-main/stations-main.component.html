@@ -39,21 +39,21 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item  pointer px-2 small" data-bs-toggle="modal" data-bs-target="#exampleModal5" >التفاصيل<i class="fa-solid fa-circle-exclamation pe-2"></i> </a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item pointer px-2 small" [routerLink]="['/stations-devices']">عرض الأجهزة <i class="fa-solid fa-desktop pe-2"></i></a></li>
+                        <li><a class="dropdown-item pointer px-2 small" [routerLink]="['/station-devices']">عرض الأجهزة <i class="fa-solid fa-desktop pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item pointer px-2 small" >عرض الأسطوانات <i class="fa-solid fa-pump-soap pe-2"></i></a></li>
+                        <li><a class="dropdown-item pointer px-2 small"  [routerLink]="['/station-pipes']">عرض الأسطوانات <i class="fa-solid fa-pump-soap pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item pointer px-2 small" >عرض الإكسسوارات <i class="fa-solid fa-sitemap pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a  class="dropdown-item pointer px-2 small" >عرض العمال <i class="fa-solid fa-users pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a   [routerLink]="['/stations-pipes-sales']" class="dropdown-item pointer px-2 small">عرض المبيعات <i class="fa-solid fa-chart-simple pe-2"></i></a></li>
+                        <li><a   [routerLink]="['/station-pipes-sales']" class="dropdown-item pointer px-2 small">عرض المبيعات <i class="fa-solid fa-chart-simple pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item pointer px-2 small" data-bs-toggle="modal" data-bs-target="#exampleModal6" (click)="delete(ri)" >حذف<i class="fa-solid fa-trash-can pe-2"></i></a></li>
                       </ul>
                 </div>
                 
-                <td class="text-center pt-5">{{station.status}}</td>
+                <td class="text-center pt-4">{{station.status}}</td>
                 <td class="text-center pt-4">{{station.operators}}</td>
                 <td class="pt-4">{{station.devices}}</td>
                 <td class="pt-4">{{station.city}}</td>
@@ -305,7 +305,7 @@
                       </td>
                       <td class="pt-3"><button class="mt-4 assign-button p-2 text-white small">تعيين</button></td>
   
-                      <td class="text-center   pt-4">{{station.status}}</td>
+                      <td class="text-center pt-4">{{station.status}}</td>
                       <td class="text-center pt-4">{{station.operators}}</td>
                       <td class="pt-4">{{station.devices}}</td>
                       <td class="pt-4">{{station.city}}</td>
@@ -381,7 +381,7 @@
   
           </div>
           <div class="col text-start">
-            <span class=" d-inline fw-bold fs-5 mx-0 px-0 ">  التفاصيل</span>
+            <span class=" d-inline fw-bold fs-5 me-3 px-0 ">  التفاصيل</span>
 
     </div>
             </div>

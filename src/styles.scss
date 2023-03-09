@@ -5,7 +5,7 @@
 // $app-palette: palette($primary, $secondary);
 
 /* autoprefixer grid: on */
-
+@import './scss/variables';
 
 // CSS Reset, comment out if not required or using a different module
 @import 'minireset.css/minireset';
@@ -92,4 +92,8 @@ html, body {
 .table>:not(caption)>*>* {
     padding: 0rem !important;
   
+}
+
+.fa-circle-exclamation{
+    color: #8D8D8D;
 }
