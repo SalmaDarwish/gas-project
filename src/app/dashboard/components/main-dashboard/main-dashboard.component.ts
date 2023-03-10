@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartsServiceService } from '../../services/charts-service.service';
 import { ApexChart, ApexDataLabels, ApexNonAxisChartSeries,ApexAxisChartSeries, ApexTitleSubtitle, ApexGrid, ApexMarkers } from 'ng-apexcharts';
 import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis,ApexFill,ApexTooltip} from "ng-apexcharts";
-import { Chart } from 'chart.js';
 import {ApexResponsive,} from "ng-apexcharts";
 import { ToolbarItems } from '@syncfusion/ej2-angular-charts';
 import  Highcharts  from "highcharts/highmaps";
@@ -14,7 +13,6 @@ import am5geodata_worldLow from "@amcharts/amcharts5-geodata/worldLow";
 import am5geodata_data_countries from "@amcharts/amcharts5-geodata/data/countries";
 import am5geodata_data_countries2 from "@amcharts/amcharts5-geodata/data/countries2"
 import { CountriesData } from 'countries-map';
-import * as ChartGeo from "chartjs-chart-geo";
 import HC_map from 'highcharts/modules/map';
 
 @Component({
