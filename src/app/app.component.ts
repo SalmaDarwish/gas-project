@@ -35,6 +35,18 @@ export class AppComponent implements OnInit, DoCheck {
         document.getElementById("fa-desktop")?.classList.remove("active-icon")
 
       }
+      if(this.href.includes("pipes")){
+        document.getElementById("fa-pump-soap")?.classList.add("active-icon")
+      } else{
+        document.getElementById("fa-pump-soap")?.classList.remove("active-icon")
+
+      }
+      if(this.href.includes("accessories")){
+        document.getElementById("fa-sitemap")?.classList.add("active-icon")
+      } else{
+        document.getElementById("fa-sitemap")?.classList.remove("active-icon")
+
+      }
     
     }
 }

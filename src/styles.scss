@@ -97,3 +97,48 @@ html, body {
 .fa-circle-exclamation{
     color: #8D8D8D;
 }
+// .p-inputnumber-input, .p-filled, .p-inputwrapper-filled{
+//     border: 0 solid white !important;
+//     text-align: end !important;
+//     border-radius: 50px !important;
+//     width: 300px;
+// }
+.p-inputnumber{
+    border: 0 solid white !important;
+    max-width: 200px !important;
+    text-align: end !important;
+    margin-right: 110px !important;
+}
+.p-inputnumber:focus{
+    border: 1px solid transparent;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    min-width: 297px !important;
+    margin-left: -10px !important;
+    padding-left: 10px !important;
+    margin-right: -10px !important;
+    margin-top: 0px !important;
+}
+// .border-none{
+//     border: 0px solid transparent !important;
+// }
+.price-input{
+    border: 1px solid transparent;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    min-width: 297px !important;
+    margin-left: -10px !important;
+    padding-left: 10px !important;
+    margin-right: -10px !important;
+    margin-top: -10px !important;
+    margin-bottom: -10px !important;
+
+}
+.price-input:focus{
+    border: 5px solid white !important;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    min-width: 297px !important;
+    margin-left: -10px !important;
+    padding-left: 10px !important;
+    margin-right: -10px !important;
+    margin-top: -10px !important;
+    margin-bottom: -10px !important;
+}

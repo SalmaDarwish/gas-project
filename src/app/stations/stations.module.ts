@@ -16,6 +16,8 @@ import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis
 import { StationDevicesSalesComponent } from './components/station-devices-sales/station-devices-sales.component';
 import  {MatCurrencyFormatModule} from 'mat-currency-format';
 import { NgxCurrencyModule } from "ngx-currency";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {InputNumberModule} from 'primeng/inputnumber';
 
 
 @NgModule({
@@ -36,7 +38,10 @@ import { NgxCurrencyModule } from "ngx-currency";
     RouterModule,
     NgApexchartsModule,
     MatCurrencyFormatModule,
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    ReactiveFormsModule,
+    InputNumberModule,
+    FormsModule,
   ],
   exports:[
     AccessoriesComponent,

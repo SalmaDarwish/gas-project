@@ -1,6 +1,6 @@
 <div class="container  mt-0 pt-0 px-0">
 <div class="header d-flex justify-content-end">
-    <button class="addStation-button py-2 px-3 mt-3 pointer"  data-bs-toggle="modal" data-bs-target="#exampleModal"> إضافة محطة <i class="fa-solid fa-plus me-3"></i> </button>
+    <button class="addStation-button py-2 px-3 mt-3 pointer"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editableForm()" > إضافة محطة <i class="fa-solid fa-plus me-3"></i> </button>
 
     <div class="filter-icon mt-3 ms-4">
             <i class="fa-solid fa-filter pointer  px-2"></i> 
@@ -37,13 +37,13 @@
                 <div class="dropdown mt-3 pt-1 me-5">
                     <td class="pt-4 pointer "  data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis p-2"></i></td>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item  pointer px-2 small" data-bs-toggle="modal" data-bs-target="#exampleModal5" >التفاصيل<i class="fa-solid fa-circle-exclamation pe-2"></i> </a></li>
+                        <li><a class="dropdown-item  pointer px-2 small" data-bs-toggle="modal" data-bs-target="#exampleModal5" (click)="noneditableForm()" >التفاصيل<i class="fa-solid fa-circle-exclamation pe-2"></i> </a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item pointer px-2 small" [routerLink]="['/station-devices']">عرض الأجهزة <i class="fa-solid fa-desktop pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item pointer px-2 small"  [routerLink]="['/station-pipes']">عرض الأسطوانات <i class="fa-solid fa-pump-soap pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item pointer px-2 small" >عرض الإكسسوارات <i class="fa-solid fa-sitemap pe-2"></i></a></li>
+                        <li><a class="dropdown-item pointer px-2 small"  [routerLink]="['/station-accessories']" >عرض الإكسسوارات <i class="fa-solid fa-sitemap pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a  class="dropdown-item pointer px-2 small" >عرض العمال <i class="fa-solid fa-users pe-2"></i></a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -88,12 +88,12 @@
         </div>
           </div>
           <div class="row input-labels mt-3 justify-content-between ">
-            <div class="col-6">
-                          <p class="text-start">إسم المحطة</p>
+            <div class="col-6 text-start">
+                          <label for="station-name">إسم المحطة</label>
 
             </div>
-            <div class="col-6">
-                          <p class="text-start ms-2">رقم المحطة</p>
+            <div class="col-6 text-start">
+                          <label for="station-id" class="text-start ms-2">رقم المحطة</label>
 
             </div>
            
@@ -102,53 +102,53 @@
           </div>
           <div class="row mt-2 inputs">
             <div class="col-6">
-                    <input class="form-control me-4 ">
+                    <input class="form-control me-4" id="station-name" name="station-name">
 
             </div>
             <div class="col-6">
-                    <input class="form-control me-3">
+                    <input class="form-control me-3" id="station-id" name="station-id">
 
             </div>
         </div>
         <div class="row input-labels mt-3  justify-content-between ">
        
-            <div class="col-6">
-                          <p class="text-start ">الحي </p>
+            <div class="col-6 text-start">
+                          <label for="region">الحي </label>
 
             </div>
-            <div class="col-6">
-                <p class="text-start ms-2">المنطقة </p>
+            <div class="col-6 text-start">
+                <label for="city">المنطقة </label>
 
   </div>
           
 
           </div>
           <div class="row selections mt-2 justify-content-between mx-2 ">
-            <select id="district" class="form-select form-select-sm  me-3 py-2" aria-label="Default select example" >
+            <select id="region" name="region" class="form-select form-select-sm  me-3 py-2" aria-label="Default select example" >
               <option selected class="text-start ">اختر الحي</option>
               <option value="1" class="text-start">الرياض</option>
               <option value="2" class="text-start">مكة</option>
               <option value="3" class="text-start">المدينة</option>
             </select>
 
- <select class="form-select form-select-sm  py-2" aria-label="Default select example" >
+ <select class="form-select  form-select-sm  py-2" id="city" name="city" aria-label="Default select example" >
             <option selected class="text-start ">اختر المنطقة</option>
             <option value="1" class="text-start">الرياض</option>
             <option value="2" class="text-start">مكة</option>
             <option value="3" class="text-start">المدينة</option>
           </select>
           </div>
-          <div class="row input-labels mt-3 justify-content-between ">
-            <div class="col-4">
-                          <p class="text-start">حالة المحطة</p>
+          <div class="row input-labels mt-3 justify-content-between">
+            <div class="col-4 text-start">
+                          <label for="station-status ms-2" >حالة المحطة </label>
 
             </div>
-            <div class="col-4">
-                          <p class="text-start ms-2">عدد العمال </p>
+            <div class="col-4 text-start ">
+                          <label class="ms-1" for="station-operators">عدد العمال </label>
 
             </div>
-            <div class="col-4">
-                <p class="text-start ms-2"> عدد الأجهزة</p>
+            <div class="col-4 text-start">
+                <label class=" ms-2" for="station-devices"> عدد الأجهزة</label>
 
   </div>
            
@@ -157,18 +157,18 @@
           </div>
           <div class="row mt-2 inputs">
             <div class="col-4">
-                <select  class="form-select form-select-sm  py-2 me-4" style="width:200px" aria-label="Default select example" >
+                <select id="station-status" name="station-status" class="form-select form-select-sm  py-2 me-4" style="width:180px" aria-label="Default select example" >
                     <option selected value="1" class="text-start">تعمل</option>
                     <option value="2" class="text-start">معطلة
                     </option>
                   </select>
             </div>
             <div class="col-4">
-                    <input class="form-control me-5 w-75" type="number">
+                    <input class="form-control me-5 w-75" id="station-operators" name="station-operators" type="number">
 
             </div>
             <div class="col-4">
-                <input class="form-control me-5 w-75" type="number">
+                <input class="form-control me-5 w-75" id="station-devices" name="station-devices" type="number">
 
         </div>
         </div>
@@ -387,12 +387,12 @@
             </div>
          
             <div class="row input-labels mt-3 justify-content-between ">
-              <div class="col-6">
-                            <p class="text-start">إسم المحطة</p>
+              <div class="col-6 text-start">
+                            <label for="station-name">إسم المحطة</label>
   
               </div>
-              <div class="col-6">
-                            <p class="text-start ms-2">رقم المحطة</p>
+              <div class="col-6 text-start">
+                            <label class=" ms-2" for="station-id">رقم المحطة</label>
   
               </div>
              
@@ -402,36 +402,36 @@
             <div class="row mt-2 inputs">
            
               <div class="col-6">
-                      <input class="form-control me-4 text-start readonly" readonly  [value]="stations[1].name">
+                      <input id="station-name" name="station-name" class="form-control me-4 text-start readonly" readonly  [value]="stations[1].name">
   
               </div>
               <div class="col-6">
-                <input class="form-control me-3 text-start readonly" readonly   [value]="stations[1].id">
+                <input id="station-name" name="station-id" class="form-control me-3 text-start readonly" readonly   [value]="stations[1].id">
 
         </div>
           </div>
           <div class="row input-labels mt-3  justify-content-between ">
          
-              <div class="col-6">
-                            <p class="text-start ">الحي </p>
+              <div class="col-6 text-start ">
+                            <label for="region" class="">الحي </label>
   
               </div>
-              <div class="col-6">
-                  <p class="text-start ms-2">المنطقة </p>
+              <div class="col-6 text-start">
+                  <label class=" ms-2" for="city">المنطقة </label>
   
     </div>
             
   
             </div>
             <div class="row selections mt-2 justify-content-between mx-2 ">
-              <select disabled="true" id="district" class="form-select form-select-sm  me-3 py-2" aria-label="Default select example" >
+              <select disabled="true" id="region" name="region" class="form-select form-select-sm  me-3 py-2" aria-label="Default select example" >
                 <option selected class="text-start ">{{stations[0].city}} </option>
                 <option value="الرياض" class="text-start">الرياض</option>
                 <option value="مكة" class="text-start">مكة</option>
                 <option value="المدينة" class="text-start">المدينة</option>
               </select>
   
-   <select disabled="true" class="form-select form-select-sm  py-2" aria-label="Default select example" >
+   <select disabled="true" class="form-select form-select-sm  py-2" id="city" name="city" aria-label="Default select example" >
               <option selected [value]="stations[0].city" class="text-start "> {{stations[0].city}}</option>
               <option value="1" class="text-start">الرياض</option>
               <option value="2" class="text-start">مكة</option>
@@ -439,16 +439,16 @@
             </select>
             </div>
             <div class="row input-labels mt-3 justify-content-between ">
-              <div class="col-4">
-                            <p class="text-start">حالة المحطة</p>
+              <div class="col-4 text-start">
+                            <label for="station-status" class="">حالة المحطة</label>
   
               </div>
-              <div class="col-4">
-                            <p class="text-start ms-2">عدد العمال </p>
+              <div class="col-4 text-start">
+                            <p for="station-operators" class=" ms-2">عدد العمال </p>
   
               </div>
-              <div class="col-4">
-                  <p class="text-start ms-2"> عدد الأجهزة</p>
+              <div class="col-4 text-start">
+                  <label class=" ms-2" for="station-devices"> عدد الأجهزة</label>
   
     </div>
              
@@ -457,7 +457,7 @@
             </div>
             <div class="row mt-2 inputs">
               <div class="col-4">
-                  <select disabled="true" class="form-select form-select-sm  py-2 me-4" style="width:200px" aria-label="Default select example" >
+                  <select disabled="true" id="station-status" name="station-status" class="form-select form-select-sm  py-2 me-4" style="width:180px" aria-label="Default select example" >
                     <option selected  [value]="stations[0].status" class="text-start">{{stations[0].status}}</option>
                       <option  value="1"  class="text-start">تعمل</option>
                       <option value="2" class="text-start">معطلة
@@ -465,11 +465,11 @@
                     </select>
               </div>
               <div class="col-4">
-                      <input class="form-control me-5 w-75 readonly" readonly   type="number" [value]="stations[0].operators">
+                      <input id="station-operators" name="station-operators" class="form-control me-5 w-75 readonly" readonly   type="number" [value]="stations[0].operators">
   
               </div>
               <div class="col-4">
-                  <input class="form-control me-5 w-75 readonly" readonly  [value]="stations[0].devices" type="number">
+                  <input class="form-control me-5 w-75 readonly" id="station-devices" name="station-devices" readonly  [value]="stations[0].devices" type="number">
   
           </div>
           </div>

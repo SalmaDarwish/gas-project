@@ -1,6 +1,6 @@
 <div class="container  mt-0 pt-0 px-0">
     <div class="header d-flex justify-content-end">
-        <button class="addStation-button py-2 px-3 mt-3 pointer"  data-bs-toggle="modal" data-bs-target="#exampleModal"> إضافة جهاز <i class="fa-solid fa-plus me-3"></i> </button>
+        <button class="addStation-button py-2 px-3 mt-3 pointer"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editableForm()"> إضافة جهاز <i class="fa-solid fa-plus me-3"></i> </button>
     
         <div class="filter-icon mt-3 ms-4">
                 <i class="fa-solid fa-filter pointer  px-2"></i> 
@@ -37,7 +37,7 @@
                     <div class="dropdown mt-3 pt-1 me-5">
                         <td class="pt-4 pointer "  data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-ellipsis p-2"></i></td>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item  pointer px-2 small" data-bs-toggle="modal" data-bs-target="#exampleModal5" >التفاصيل<i class="fa-solid fa-circle-exclamation pe-2"></i> </a></li>
+                            <li><a class="dropdown-item  pointer px-2 small" data-bs-toggle="modal" data-bs-target="#exampleModal5" (click)="noneditableForm()" >التفاصيل<i class="fa-solid fa-circle-exclamation pe-2"></i> </a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a   [routerLink]="['/station-devices-sales']" class="dropdown-item pointer px-2 small">عرض المبيعات <i class="fa-solid fa-chart-simple pe-2"></i></a></li>
                             <li><hr class="dropdown-divider"></li>
