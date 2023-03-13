@@ -14,6 +14,10 @@ import am5geodata_data_countries from "@amcharts/amcharts5-geodata/data/countrie
 import am5geodata_data_countries2 from "@amcharts/amcharts5-geodata/data/countries2"
 import { CountriesData } from 'countries-map';
 import HC_map from 'highcharts/modules/map';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 @Component({
   selector: 'app-main-dashboard',
@@ -53,10 +57,10 @@ export class MainDashboardComponent implements OnInit {
    labels:any;
 
   
+   Categories:[]=[]
 
  
   constructor(private chartsService:ChartsServiceService) {
-    
     // pipes Chart 
       this.series= [
         {
@@ -303,7 +307,16 @@ export class MainDashboardComponent implements OnInit {
   
 
   ngOnInit(){
- 
+    this.chartsService.getAllCategory().subscribe({
+      next:(data:any)=>{
+        console.log(data)
+            }
+    })
+
+
+  
+  
+    console.log(this.chartsService.headers) 
   }
   
 

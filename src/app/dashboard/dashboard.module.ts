@@ -9,6 +9,8 @@ import { ApexChart, ApexDataLabels, ApexNonAxisChartSeries,ApexAxisChartSeries, 
 import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis,ApexFill,ApexTooltip} from "ng-apexcharts";
 import { HighchartsChartModule } from "highcharts-angular";
 import { CountriesMapModule } from 'countries-map';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -21,6 +23,7 @@ import { CountriesMapModule } from 'countries-map';
     NgApexchartsModule,
     HighchartsChartModule,
     CountriesMapModule,
+    HttpClientModule,
  
   ],
   exports:[
