@@ -12,13 +12,13 @@ export class ChartsServiceService {
   //   'Content-Type': 'application/json-patch+json',
   //   'accept': 'application/json-patch+json',
   // }
-  headers= {
-    "lang":"en",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, HEAD",
-    'Content-Type': 'application/json-patch+json',
-    'accept': '*/*',
-  }
+  // headers= {
+  //   "lang":"en",
+  //   "Access-Control-Allow-Origin": "*",
+  //   "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, HEAD",
+  //   'Content-Type': 'application/json-patch+json',
+  //   'accept': '*/*',
+  // }
     // const headers= new HttpHeaders()
     // .set('content-type', 'application/json-patch+json')
     // .set('Access-Control-Allow-Origin', '*')
@@ -37,12 +37,6 @@ export class ChartsServiceService {
   }
   getAllCategory(): Observable<any>{
     console.log("khaled")
-    return this.http.post('https://robogasclientapi.icitybackend.com/api/Category/GetAll',{
-      headers:{
-        "lang":"ar",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, HEAD",
-      }
-    });
+    return this.http.post('https://robogasclientapi.icitybackend.com/api/Category/GetAll',null,{})
   }
 }

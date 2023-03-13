@@ -316,7 +316,7 @@ export class MainDashboardComponent implements OnInit {
 
   
   
-    console.log(this.chartsService.headers) 
+    // console.log(this.chartsService.headers) 
   }
   
 
