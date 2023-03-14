@@ -10,15 +10,13 @@ import { StationPipesSalesComponent } from './stations/components/station-pipes-
 import { StationsMainComponent } from './stations/components/stations-main/stations-main.component';
 
 const routes: Routes = [
-  // {path:"", redirectTo:"dashboard",pathMatch:'full'},
+  {path:"", redirectTo:"dashboard",pathMatch:'full'},
 
   {path:"dashboard",component:MainDashboardComponent},
-  {path:"stations",component:StationsMainComponent},
-  {path:"station-pipes-sales",component:StationPipesSalesComponent},
-  {path:"station-devices",component: DevicesComponent},
-  {path:"station-devices-sales",component:StationDevicesSalesComponent},
-  {path:"station-pipes",component: PipesComponent},
-  {path:"station-accessories",component: AccessoriesComponent},
+  {path:'stations',
+  loadChildren: () => import('./stations/stations.module').then(m => m.StationsModule)
+},
+
 
 
 

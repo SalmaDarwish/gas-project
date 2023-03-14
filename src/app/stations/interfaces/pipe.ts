@@ -1,0 +1,16 @@
+export interface Pipe {
+        "id": number,
+        "sale_Price": number,
+        "saleAfterCoupon": null,
+        "is_Stop": boolean,
+        "category_Id": number,
+        "coupon_Id": number,
+        "path": string,
+        "quantity": null,
+        "is_Full": null,
+        "is_Empty": null,
+        "isTube": boolean,
+        "name": string,
+        "description": string,
+        "qr_Code": string,
+}

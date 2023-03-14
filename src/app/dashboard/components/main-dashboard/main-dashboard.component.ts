@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, Pipe, ViewChild } from '@angular/core';
 import { ChartsServiceService } from '../../services/charts-service.service';
 import { ApexChart, ApexDataLabels, ApexNonAxisChartSeries,ApexAxisChartSeries, ApexTitleSubtitle, ApexGrid, ApexMarkers } from 'ng-apexcharts';
 import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis,ApexFill,ApexTooltip} from "ng-apexcharts";
@@ -57,7 +57,8 @@ export class MainDashboardComponent implements OnInit {
    labels:any;
 
   
-   Categories:[]=[]
+   Categories:[]=[];
+   AllAccessories:[]=[];
 
  
   constructor(private chartsService:ChartsServiceService) {
@@ -304,14 +305,25 @@ export class MainDashboardComponent implements OnInit {
 
 
   }
-  
-
-  ngOnInit(){
+  getAccessories(){
+    this.chartsService.getCategory(2).subscribe({
+      next:(data:any)=>{
+        this.AllAccessories=data.entity
+        console.log(this.AllAccessories)
+            }
+    })
+  }
+  getAllCategory(){
     this.chartsService.getAllCategory().subscribe({
       next:(data:any)=>{
         console.log(data)
-            }
+      }
     })
+  }
+
+  ngOnInit(){
+    this.getAccessories()
+    // this.getAllCategory()
 
 
   

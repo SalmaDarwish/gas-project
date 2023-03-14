@@ -9,7 +9,7 @@ import {TableModule} from 'primeng/table';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AgGridModule } from 'ag-grid-angular';
 import { StationPipesSalesComponent } from './components/station-pipes-sales/station-pipes-sales.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule,Routes  } from '@angular/router';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { ApexChart, ApexDataLabels, ApexNonAxisChartSeries,ApexAxisChartSeries, ApexTitleSubtitle, ApexGrid, ApexMarkers } from 'ng-apexcharts';
 import {ChartComponent,ApexPlotOptions,ApexYAxis,ApexLegend,ApexStroke,ApexXAxis,ApexFill,ApexTooltip} from "ng-apexcharts";
@@ -19,7 +19,14 @@ import { NgxCurrencyModule } from "ngx-currency";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {InputNumberModule} from 'primeng/inputnumber';
 
-
+const routes : Routes = [
+ {path:"all-stations",component:StationsMainComponent},
+  {path:"station-pipes-sales",component:StationPipesSalesComponent},
+  {path:"station-devices",component: DevicesComponent},
+  {path:"station-devices-sales",component:StationDevicesSalesComponent},
+  {path:"station-pipes",component: PipesComponent},
+  {path:"station-accessories",component: AccessoriesComponent},
+]
 @NgModule({
   declarations: [
     DevicesComponent,
@@ -42,13 +49,15 @@ import {InputNumberModule} from 'primeng/inputnumber';
     ReactiveFormsModule,
     InputNumberModule,
     FormsModule,
+    RouterModule.forChild(routes)
   ],
   exports:[
     AccessoriesComponent,
     DevicesComponent,
     OperatorsComponent,
     PipesComponent,
-    StationsMainComponent
+    StationsMainComponent,
+    RouterModule
  
  
    ]

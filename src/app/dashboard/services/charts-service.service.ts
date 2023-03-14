@@ -24,19 +24,24 @@ export class ChartsServiceService {
     // .set('Access-Control-Allow-Origin', '*')
     // .set('Access-Control-Allow-Methods','POST, GET, OPTIONS, PUT, DELETE, HEAD')
     // .set('accept','*/*')
-
+   
 
   constructor(private http: HttpClient) {
   
+ 
 
-   
 
   }
-  get(): Observable<any> {
-   return this.http.get('https://www.ag-grid.com/example-assets/row-data.json');
+  getCategory(id:number): Observable<any> {
+   return this.http.get(`https://robogasclientapi.icitybackend.com/api/Category/${id}`,{});
   }
   getAllCategory(): Observable<any>{
-    console.log("khaled")
-    return this.http.post('https://robogasclientapi.icitybackend.com/api/Category/GetAll',null,{})
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+      'access-control-allow-origin': '*',
+      'accept': '/' });
+    let options = { headers: headers };
+    let data = {};
+    return this.http.post('https://robogasclientapi.icitybackend.com/api/Category/GetAll',data,options)
   }
 }
